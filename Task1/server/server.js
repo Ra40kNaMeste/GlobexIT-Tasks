@@ -2,8 +2,8 @@ const fs = require('fs');
 const fastify = require('fastify')({ logger: true });
 
 fastify.register(require('fastify-cors'), {});
-
 fastify.get('/', async (request, reply) => {
+	
 	fs.readFile('./users.json', 'utf8', (err, data) => {
 		if (err) {
 			console.log('File read failed:', err);
@@ -25,7 +25,7 @@ fastify.get('/', async (request, reply) => {
 
 const start = async () => {
   try {
-    await fastify.listen(3000)
+    await fastify.listen(3000, '0.0.0.0');
   } catch (err) {
     fastify.log.error(err);
     process.exit(1);
