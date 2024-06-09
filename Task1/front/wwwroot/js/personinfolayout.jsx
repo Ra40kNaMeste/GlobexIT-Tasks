@@ -11,7 +11,7 @@ function Card({person, clickHangler}){
         </tr>
         <tr>
             <td><img src="image/email.svg" className="icon"></img></td>
-            <td><p className="data">{person.email}</p></td>
+            <td className="data">{person.email}</td>
         </tr>
     </table>
     </div>

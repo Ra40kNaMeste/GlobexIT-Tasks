@@ -5,7 +5,8 @@
     padding: 0px;
 }
 .data{
-    align-content: center;
+    text-wrap: wrap;
+    word-break: break-all;
 }
 .card{
     width: 309px;
@@ -37,8 +38,6 @@
 
 .card table tr td{
     width: auto;
-    height: auto;
-    padding: 0%;
 }
 
 .searchContainer{
