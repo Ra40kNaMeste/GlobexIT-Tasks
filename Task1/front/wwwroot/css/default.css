@@ -1,0 +1,72 @@
+.icon{
+    width: 24px;
+    height: 24px;
+    margin: 10px;
+    padding: 0px;
+}
+.data{
+    align-content: center;
+}
+.card{
+    width: 309px;
+    height: 266px;
+    padding: 24px;
+    margin: 12.5px;
+    gap: 24px;
+    border-radius: 16px;
+    opacity: 0px;
+
+    box-shadow: 0px 0px 20px 0px #0000001A;
+    background-color: #FFFFFF;
+}
+.card table{
+    width: 100%;
+    font-weight: 700;
+    font-size: 24px;
+
+}
+
+.card table tr{
+    width: auto;
+    height: auto;
+    padding: 0%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.card table tr td{
+    width: auto;
+    height: auto;
+    padding: 0%;
+}
+
+.searchContainer{
+    padding: 59px;
+}
+.cardContainer{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content:space-between;
+}
+.search{
+    width: calc(100% - 72px);
+    margin: 0px 12.5px 25px 12.5px;
+    border: solid 1px #D4DEFE;
+    height: 48px;
+    gap: 0px;
+    border-radius: 24px;
+    opacity: 0px;
+    padding:0px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.search input{
+    width: calc(100% - 95px);
+    height: calc(100%-1px);
+    font-size: 24px;
+    border-color: transparent;
+    outline: none;
+}

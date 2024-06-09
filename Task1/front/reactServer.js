@@ -4,7 +4,7 @@ const fs = require("fs");
 http.createServer(function(request, response){
        
     let filePath = "wwwroot/html/index.html";
-    if(request.url.startsWith("/js/")){
+    if(request.url != "/"){
         filePath = 'wwwroot' + request.url;
     }
     fs.readFile(filePath, function(error, data){
@@ -15,6 +15,8 @@ http.createServer(function(request, response){
             response.end("Resourse not found!");
         }   
         else{
+            if(filePath.endsWith('.svg'))
+                response.setHeader('Content-Type', 'image/svg+xml');
             response.end(data);
         }
     });
