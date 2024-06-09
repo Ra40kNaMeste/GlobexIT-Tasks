@@ -70,3 +70,74 @@
     border-color: transparent;
     outline: none;
 }
+
+.backDiv{
+    position:fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background: #BCC3D080;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+.view{
+    width: 500px;
+    height: 468px;
+    width: Fixed (500px)px;
+    gap: 40px;
+    border-radius: 16px;
+    opacity: 0px;
+    background-color: #FFFFFF;
+    padding: 20px 40px;
+}
+.exitImg{
+    width: 20px;
+    height: 20px;
+}
+.viewHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.viewHeader h3{
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 30px;
+    text-align: left;
+}
+.viewProperties{
+    margin: 20px 0px;
+}
+.viewProperties tr td{
+    
+    font-weight: 400;
+    line-height: 24px;
+}
+.viewProperties tr td:first-child{
+    width: calc(100%/3);
+    font-size: 18px;
+    color: #262C40;
+}
+.viewProperties tr td:last-child{
+    font-size: 16px;
+    color: #8189A3;
+    
+}
+.additionalInfo{
+    margin: 20px 0px;
+}
+.additionalInfo h3{
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #262C40;
+}
+.additionalInfo p{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18px;
+    color: #8189A3;
+}

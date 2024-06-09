@@ -1,8 +1,8 @@
 const rootNode = document.getElementById("root");
 const root = ReactDOM.createRoot(rootNode);
 
-function Card({person}){
-    return <div className="card">
+function Card({person, clickHangler}){
+    return <div className="card" onClick={clickHangler}>
         <table>
         <caption>{person.name}</caption>
         <tr>
@@ -17,6 +17,43 @@ function Card({person}){
     </div>
 }
 
+function ViewCard({person, closed}){
+    console.log(person);
+    return <div className="backDiv" onClick={closed}>
+        <div className="view" onClick={e=>e.stopPropagation()}>
+            <div className="viewHeader">
+                <h3>{person.name}</h3>
+                <img src="image/exit.svg" className="exitImg" onClick={closed}></img>
+            </div>
+            <table className="viewProperties">
+                <tr>
+                    <td>Телефон:</td>
+                    <td>{person.phone}</td>
+                </tr>
+                <tr>
+                    <td>Почта:</td>
+                    <td>{person.email}</td>
+                </tr>
+                <tr>
+                    <td>Дата приёма:</td>
+                    <td>{person.hire_date}</td>
+                </tr>
+                <tr>
+                    <td>Должность:</td>
+                    <td>{person.position_name}</td>
+                </tr>
+                <tr>
+                    <td>Подразделение:</td>
+                    <td>{person.department}</td>
+                </tr>
+            </table>
+            <div className="additionalInfo">
+                <h3>Дополнительная информация:</h3>
+                <p>{person.information}</p>
+            </div>
+        </div>
+    </div>
+}
 
 class Search extends React.Component{
     constructor(props){
@@ -49,8 +86,9 @@ class Search extends React.Component{
                 <img src="image/search.svg"/>
             </div>
             <div className="cardContainer">
-                {this.state.people.map(p=><Card person={p}></Card>)}
+                {this.state.people.map(p=><Card person={p} clickHangler={()=>this.setState({selectPerson: p})}></Card>)}
             </div>
+            {this.state.selectPerson != undefined?<ViewCard person={this.state.selectPerson} closed={()=>this.setState({selectPerson:undefined})}></ViewCard>:undefined}
         </div>
       }
 }
