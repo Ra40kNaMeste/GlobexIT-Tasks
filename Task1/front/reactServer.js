@@ -17,6 +17,12 @@ http.createServer(function(request, response){
         else{
             if(filePath.endsWith('.svg'))
                 response.setHeader('Content-Type', 'image/svg+xml');
+            else if(filePath.endsWith('.eot'))
+                response.setHeader('Content-Type', 'application/vnd.ms-fontobject')
+            else if(filePath.endsWith('.ttf'))
+                response.setHeader('Content-Type', 'font/ttf')
+            else if(filePath.endsWith('.woff'))
+                response.setHeader('Content-Type', 'font/woff')
             response.end(data);
         }
     });
