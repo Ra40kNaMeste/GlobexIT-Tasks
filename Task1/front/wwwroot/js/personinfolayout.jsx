@@ -18,7 +18,6 @@ function Card({person, clickHangler}){
 }
 
 function ViewCard({person, closed}){
-    console.log(person);
     return <div className="backDiv" onClick={closed}>
         <div className="view" onClick={e=>e.stopPropagation()}>
             <div className="viewHeader">
@@ -79,7 +78,6 @@ class Search extends React.Component{
     }
     
     render() {
-        console.log(this.state.people)
         return <div className="searchContainer">
             <div className="search">
                 <input type="text" onChange={(e)=>this.load(e.target.value)}/>
